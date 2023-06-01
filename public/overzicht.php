@@ -1,2 +1,18 @@
 <?php
-//overzicht pagina casus4
+//overzicht pagina casus
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>overzicht</title>
+</head>
+
+<body>
+    <h1>Overicht werk</h1>
+</body>
+
+</html>

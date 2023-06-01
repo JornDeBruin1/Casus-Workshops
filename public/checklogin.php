@@ -1,4 +1,5 @@
 <?php
+session_start();
 require("../src/db.php");
 
 
@@ -15,7 +16,7 @@ $sql = "SELECT * FROM admin WHERE Email='" .$_POST['mail'] . "'and Wachtwoord='"
     $row = $result->fetch_array();
     $_SESSION['admin'] = $row;
     echo "Welkom ". $_SESSION["admin"]["Voornaam"] . " " . $_SESSION["admin"]["Achternaam"];
-  
+    header("location: main.php");
  }
  else
  {

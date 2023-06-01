@@ -30,15 +30,15 @@
                                 <td>Soort</td>
                                 <td>Datum</td>
                             </tr>
-                            <!-- <tr>
+                            <tr>
                                 <?php while ($row = mysqli_fetch_assoc($result)) {
                                 ?>
                                 <td><?php echo $row['id']; ?> </td>
-                                <td><?php echo $row['users']; ?> </td>
-                                <td><?php echo $row['Soort']; ?> </td>
+                                <td><?php echo $row['Naam']; ?> </td>
+                                <td><?php echo $row['Omschrijving']; ?> </td>
                                 <td><?php echo $row['Datum']; ?> </td>
-
-                            </tr> -->
+                                <td><?php echo $row['Prijs']; ?></td>
+                            </tr>
                             <?php } ?>
 
 

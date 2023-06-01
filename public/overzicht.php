@@ -1,8 +1,8 @@
 <?php
-//overzicht pagina casus
-require_once("./src/databaseFunctions.php");
-$query = "SELECT *  FROM  klanten;";
-$result = mysqli_query($conn, $query);
+require_once('../src/db.php');
+$query = "SELECT *  FROM  klant";
+$db = new DB();
+$result = $db->query($query);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,17 +29,27 @@ $result = mysqli_query($conn, $query);
                         <table class="table table-borderd text-center">
                             <tr class="bg-dark text-white">
                                 <td>Id</td>
-                                <td>Users id</td>
-                                <td>Soort</td>
-                                <td>Datum</td>
+                                <td>Voornaam</td>
+                                <td>achternaam</td>
+                                <td>Omschrijving</td>
+                                <td>mail</td>
+                                <td>telefoon nummer</td>
+                                <td>adres</td>
+                                <td>datum</td>
+                                <td>prijs</td>
+
                             </tr>
                             <tr>
                                 <?php while ($row = mysqli_fetch_assoc($result)) {
                                 ?>
                                 <td><?php echo $row['id']; ?> </td>
                                 <td><?php echo $row['Naam']; ?> </td>
+                                <td><?php echo $row['Achternaam'] ?></td>
                                 <td><?php echo $row['Omschrijving']; ?> </td>
-                                <td><?php echo $row['Datum']; ?> </td>
+                                <td><?php echo $row['Mail']; ?> </td>
+                                <td><?php echo $row['Telefoon']; ?></td>
+                                <td><?php echo $row['Adres']; ?></td>
+                                <td><?php echo $row['Datum']; ?></td>
                                 <td><?php echo $row['Prijs']; ?></td>
                             </tr>
                             <?php } ?>

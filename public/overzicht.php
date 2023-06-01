@@ -19,6 +19,8 @@ $result = $db->query($query);
 <body>
 
     <div class="container">
+        <a href="index.php"> uitlog</a>
+
         <div class="row">
             <div class="col">
                 <div class="card mt-5">

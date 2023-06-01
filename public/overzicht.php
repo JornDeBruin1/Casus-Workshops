@@ -19,7 +19,9 @@ $result = $db->query($query);
 <body>
 
     <div class="container">
+
         <a href="index.php"> uitlog</a>
+        <a href="klantToevoegen.php">klant formulier </a>
 
         <div class="row">
             <div class="col">

@@ -13,22 +13,34 @@ require_once('../src/db.php');
     <table>
         <form>
             <tr>
-                <td><input type="text" name="vnaam" placeholder="Voer voornaam in:" required></td>
+                <td><input type="text" name="vnaam" placeholder="Voer voornaam in:*" required></td>
             </tr>
             <tr>
-                <td><input type="text" name="tussenvoegsel" placeholder="Voer tussenvoegsel in:" required></td>
+                <td><input type="text" name="tussenvoegsel" placeholder="Voer tussenvoegsel in:"></td>
             </tr>
             <tr>
-                <td><input type="text" name="anaam" placeholder="Voer achternaam in:" required></td>
+                <td><input type="text" name="anaam" placeholder="Voer achternaam in:*" required></td>
             </tr>
             <tr>
-                <td><input type="text" name="email_telefoon" placeholder="Voer email of telefoonnummer in:" required></td>
+                <td><input type="text" name="email" placeholder="Voer email in:*" required></td>
             </tr>
             <tr>
-                <td><input type="text" name="adres" placeholder="Voer adres in:" required></td>
+                <td><input type="text" name="telefoon" placeholder="Voer telefoonnummer in:"></td>
             </tr>
             <tr>
-                <td></td>
+                <td><input type="text" name="adres" placeholder="Voer adres in:*"></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="omschrijving" placeholder="Voer omschrijving in:"></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="prijs" placeholder="Voer prijs in:"></td>
+            </tr>
+            <tr>
+                <td><input type="date" name="datum"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" name="submit" value="submit"></td>
             </tr>
         </form>
     </table>

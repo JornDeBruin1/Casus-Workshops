@@ -1,5 +1,8 @@
 <?php
 //overzicht pagina casus
+require_once("./src/databaseFunctions.php");
+$query = "SELECT *  FROM  klanten;";
+$result = mysqli_query($conn, $query);
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,2 +1,0 @@
-<?php
-//overzicht pagina casus

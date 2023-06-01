@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php 
+require_once('../src/db.php');
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,9 +10,27 @@
     <title>Klant Toevoeg Pagina</title>
 </head>
 <body>
-    <form>
-        <input type="text" name="voornaam" placeholder="Voer voornaam in:">
-        <input type="text" name="achternaam" placeholder="Voer achternaam in:">
-    </form>
+    <table>
+        <form>
+            <tr>
+                <td><input type="text" name="vnaam" placeholder="Voer voornaam in:" required></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="tussenvoegsel" placeholder="Voer tussenvoegsel in:" required></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="anaam" placeholder="Voer achternaam in:" required></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="email_telefoon" placeholder="Voer email of telefoonnummer in:" required></td>
+            </tr>
+            <tr>
+                <td><input type="text" name="adres" placeholder="Voer adres in:" required></td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+        </form>
+    </table>
 </body>
 </html>

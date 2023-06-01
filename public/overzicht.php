@@ -22,6 +22,7 @@ $result = $db->query($query);
 
         <a href="index.php"> uitlog</a>
         <a href="klantToevoegen.php">klant formulier </a>
+        <a href="main.php">main</a>
 
         <div class="row">
             <div class="col">

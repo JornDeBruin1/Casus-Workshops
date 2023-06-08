@@ -1,7 +1,7 @@
 <?php
 require_once('../src/db.php');
 require_once('../src/users.php');
-
+session_start();
 $klant = new Klanten();
 $db = new DB();
 

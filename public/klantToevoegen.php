@@ -15,7 +15,7 @@ if (isset($_POST['submit']))
     $omschrijving = $_POST['omschrijving'];
     $prijs = $_POST['prijs'];
     $datum = $_POST['datum'];
-    $klant = $klanten->createKlant($voornaam, $achternaam, $tussenvoegsel, $email, $telefoon, $adres, $omschrijving, $prijs, $datum);
+    $klant = $klanten->createKlant($voornaam, $achternaam, $omschrijving, $email, $telefoon, $adres, $datum, $prijs);
 
     // $query = "INSERT INTO klant (`Mail`,`Naam`,`Achternaam`,`Telefoon`,`Adres`,`Omschrijving`,`Tussenvoegsel`,`Prijs`,`Datum`)
     //  VALUES('$email', '$voornaam', '$achternaam', '$telefoon', '$adres', '$omschrijving', '$tussenvoegsel', '$prijs', '$datum')";

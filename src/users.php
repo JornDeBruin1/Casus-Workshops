@@ -44,10 +44,10 @@ class Klanten
         }
     }
 
-    public function createKlant($voornaam, $achternaam, $email, $telefoon, $adres, $omschrijving, $tussenvoegsel, $prijs, $datum)
+    public function createKlant($voornaam, $achternaam, $email, $telefoon, $adres, $omschrijving, $prijs, $datum)
     {
-        $query = "INSERT INTO klant (Mail,Naam,Achternaam,Telefoon,Adres,Omschrijving,Tussenvoegsel,Prijs,Datum)
-     VALUES('$email', '$voornaam', '$achternaam', '$telefoon', '$adres', '$omschrijving', '$tussenvoegsel', '$prijs', '$datum')";
+        $query = "INSERT INTO klant (Mail,Naam,Achternaam,Telefoon,Adres,Omschrijving,Prijs,Datum)
+     VALUES('$email', '$voornaam', '$achternaam', '$telefoon', '$adres', '$omschrijving', '$prijs', '$datum')";
         $this->db->query($query);
     }
 

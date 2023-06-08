@@ -31,8 +31,7 @@ if (isset($_GET['edit'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="./CSS/overzichtCss.css" rel="stylesheet">
     <title>overzicht</title>
 
@@ -69,26 +68,24 @@ if (isset($_GET['edit'])) {
                                 <?php $allKlanten = $klant->getAllKlanten();
                                 foreach ($allKlanten as $klanten) { ?>
 
-                                <td><?php echo $klanten['id']; ?> </td>
-                                <td><?php echo $klanten['Naam']; ?> </td>
-                                <td><?php echo $klanten['Achternaam'] ?></td>
-                                <td><?php echo $klanten['Omschrijving']; ?> </td>
-                                <td><?php echo $klanten['Mail']; ?> </td>
-                                <td><?php echo $klanten['Telefoon']; ?></td>
-                                <td><?php echo $klanten['Adres']; ?></td>
-                                <td><?php echo $klanten['Datum']; ?></td>
-                                <td><?php echo $klanten['Prijs']; ?></td>
-                                <td><a href=" klantToevoegen.php?edit=<?php echo $klanten['id']; ?>" class="edit_btn">
-                                        edit</a></td>
-                                <td>
-                                    <a href="server.php?del=<?php echo $klanten['id']; ?>" class="del_btn">delete</a>
-                                </td>
+                                    <td><?php echo $klanten['id']; ?> </td>
+                                    <td><?php echo $klanten['Naam']; ?> </td>
+                                    <td><?php echo $klanten['Achternaam'] ?></td>
+                                    <td><?php echo $klanten['Omschrijving']; ?> </td>
+                                    <td><?php echo $klanten['Mail']; ?> </td>
+                                    <td><?php echo $klanten['Telefoon']; ?></td>
+                                    <td><?php echo $klanten['Adres']; ?></td>
+                                    <td><?php echo $klanten['Datum']; ?></td>
+                                    <td><?php echo $klanten['Prijs']; ?></td>
+                                    <td><a href=" klantToevoegen.php?edit=<?php echo $klanten['id']; ?>" class="edit_btn">
+                                            edit</a></td>
+                                    <td>
+                                        <a href="server.php?del=<?php echo $klanten['id']; ?>" class="del_btn">delete</a>
+                                    </td>
                             </tr>
-                            <?php } ?>
+                        <?php } ?>
 
                         </table>
-                        <!-- <a href=" klantToevoegen.php?edit=<?php echo $klant['id']; ?>" class="edit_btn">edit</a>
-                                    <a href="server.php?del=<?php echo $klant['id'];  ?>" class="del_btn">Delete</a> -->
                     </div>
                 </div>
             </div>

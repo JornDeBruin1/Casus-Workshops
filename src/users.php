@@ -1,4 +1,3 @@
-
 <?php
 require_once('../src/db.php');
 
@@ -44,14 +43,14 @@ class Klanten
         }
     }
 
-    public function createKlant($voornaam, $achternaam, $email, $telefoon, $adres, $omschrijving, $prijs, $datum)
+    public function createKlant($voornaam, $achternaam, $omschrijving, $email, $telefoon, $adres, $datum, $prijs)
     {
         $query = "INSERT INTO klant (`Mail`,`Naam`,`Achternaam`,`Telefoon`,`Adres`,`Omschrijving`,`Prijs`,`Datum`)
      VALUES('$email', '$voornaam', '$achternaam', '$telefoon', '$adres', '$omschrijving', '$prijs', '$datum')";
         $this->db->query($query);
     }
 
-    public function updateklant($id, $voornaam, $achternaam, $email, $telefoon, $adres, $omschrijving, $tussenvoegsel, $prijs, $datum)
+    public function updateklant($id, $voornaam, $achternaam, $omschrijving, $email, $telefoon, $adres, $datum, $prijs)
     {
         $query = "UPDATE `klant` SET `Voornaam`='$voornaam',`Achternaam`='$achternaam',`Email`='$email',`Telefoon`='$telefoon', `Adres`='$adres', `Omschrijving` = '$omschrijving',`Tussenvoegsel` = '$tussenvoegsel', `Prijs` = '$prijs', `Datum` = '$datum'  WHERE `id` = $id";
         $this->db->query($query);

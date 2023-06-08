@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login Pagina</title>
     <link rel="stylesheet" href="./CSS/loginStyle.css">
+    <meta name="description" content="Pagina">
 </head>
 <body>
     <div class="container">
@@ -15,18 +16,18 @@
         <table>
         <tr>
         <td>
-            <label>E-Mail</label>
+            <label for="mail">E-Mail</label>
         </td>
         <td>
-            <input type="email" name="mail" required>
+            <input type="email" name="mail" placeholder="naam@mail.com" required>
         </td>
         </tr>
         <tr>
             <td> 
-                <label>Wachtwoord</label>
+                <label for="wachtwoord">Wachtwoord</label>
             </td>
              <td> 
-            <input type="password" class="password" name="wachtwoord" required>
+            <input type="password" class="password" name="wachtwoord" placeholder="Wachtwoord" required>
             </td>
       </tr>
         <br>

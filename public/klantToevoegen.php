@@ -39,7 +39,6 @@ if (isset($_POST['submit']))
     <title>Klant Toevoeg Pagina</title>
 </head>
 <body>
-    <a href="main.php">main</a>
     <a href="overzicht.php">overzicht</a>
     <a href="index.php">uitlog</a>
     <table>

@@ -16,6 +16,8 @@ class DB
 
     public function query($sql)
     {
+        // echo $sql;
+        // die();
         $result = $this->conn->query($sql);
         if (!$result) {
             die("Query failed: " . $this->conn->error);

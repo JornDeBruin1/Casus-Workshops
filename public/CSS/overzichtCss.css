@@ -1,0 +1,14 @@
+.edit_btn {
+  text-decoration: none;
+  /* padding: 2px 5px; */
+  background: #2e8b57;
+  color: white;
+  border-radius: 3px;
+}
+.del_btn {
+  text-decoration: none;
+  padding: 2px 5px;
+  color: white;
+  border-radius: 3px;
+  background: #800000;
+}

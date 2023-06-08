@@ -1,0 +1,17 @@
+body
+{
+    background-color: lightgray;
+}
+a
+{
+    border: 1px solid black;
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    padding: 10px;
+    margin: 5px;
+}
+a:hover
+{
+    background-color: wheat;
+}

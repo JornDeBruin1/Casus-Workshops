@@ -21,8 +21,8 @@ $result = $db->query($query);
 
     <div class="container">
 
-        <a href="index.php"> uitlog</a>
-        <a href="klantToevoegen.php">klant formulier </a>
+        <a class="boven_knop" href="index.php"> uitlog</a>
+        <a class="boven_knop" href="klantToevoegen.php">klant formulier </a>
 
         <div class="row">
             <div class="col">

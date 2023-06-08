@@ -2,7 +2,7 @@ body
 {
     background-color: lightgray;
 }
-a
+.boven_knop
 {
     border: 1px solid black;
     text-decoration: none;
@@ -11,7 +11,7 @@ a
     padding: 10px;
     margin: 5px;
 }
-a:hover
+.boven_knop:hover
 {
     background-color: wheat;
 }

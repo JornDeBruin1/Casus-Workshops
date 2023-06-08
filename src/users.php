@@ -52,7 +52,7 @@ class Klanten
 
     public function updateklant($id, $voornaam, $achternaam, $omschrijving, $email, $telefoon, $adres, $datum, $prijs)
     {
-        $query = "UPDATE `klant` SET `Voornaam`='$voornaam',`Achternaam`='$achternaam',`Email`='$email',`Telefoon`='$telefoon', `Adres`='$adres', `Omschrijving` = '$omschrijving',`Tussenvoegsel` = '$tussenvoegsel', `Prijs` = '$prijs', `Datum` = '$datum'  WHERE `id` = $id";
+        $query = "UPDATE `klant` SET `Voornaam`='$voornaam',`Achternaam`='$achternaam',`Email`='$email',`Telefoon`='$telefoon', `Adres`='$adres', `Omschrijving` = '$omschrijving', `Prijs` = '$prijs', `Datum` = '$datum'  WHERE `id` = $id";
         $this->db->query($query);
     }
 

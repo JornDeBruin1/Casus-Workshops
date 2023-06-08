@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <?php 
-// require_once('../src/databaseFunctions.php');
-// session_start();
+require_once('../src/users.php');
+$klanten = new Klanten();
+session_start();
 
-// if (isset($_POST['submit']))
-// {
-//     $voornaam = $_POST['vnaam'];
-//     $achternaam = $_POST['anaam'];
-//     $tussenvoegsel = $_POST['tussenvoegsel'];
-//     $email = $_POST['email'];
-//     $telefoon = $_POST['telefoon'];
-//     $adres = $_POST['adres'];
-//     $omschrijving = $_POST['omschrijving'];
-//     $prijs = $_POST['prijs'];
-//     $datum = $_POST['datum'];
+if (isset($_POST['submit']))
+{
+    $voornaam = $_POST['vnaam'];
+    $achternaam = $_POST['anaam'];
+    $tussenvoegsel = $_POST['tussenvoegsel'];
+    $email = $_POST['email'];
+    $telefoon = $_POST['telefoon'];
+    $adres = $_POST['adres'];
+    $omschrijving = $_POST['omschrijving'];
+    $prijs = $_POST['prijs'];
+    $datum = $_POST['datum'];
+    $klant = $klanten->createKlant($voornaam, $achternaam, $tussenvoegsel, $email, $telefoon, $adres, $omschrijving, $prijs, $datum);
 
-//     $query = "INSERT INTO klant (`Mail`,`Voornaam`,`Achternaam`,`Telefoon`,`Adres`,`Omschrijving`,`Datum`,`Tussenvoegsel`,`Prijs`)
-//      VALUES('$email', '$voornaam', '$achternaam', '$telefoon', '$adres', '$omschrijving', '$datum', '$tussenvoegsel', '$prijs')";
+    // $query = "INSERT INTO klant (`Mail`,`Naam`,`Achternaam`,`Telefoon`,`Adres`,`Omschrijving`,`Tussenvoegsel`,`Prijs`,`Datum`)
+    //  VALUES('$email', '$voornaam', '$achternaam', '$telefoon', '$adres', '$omschrijving', '$tussenvoegsel', '$prijs', '$datum')";
 
-//     $query_run = db_getData($query);
+    // $query_run = db_getData($query);
 
-//     if ($query_run) {
-//         $_SESSION['status'] = "inserted succesfully";
-//         header("Location: klantToevoegen.php");
-//     } else {
-//         $_SESSION['status'] = "data not inserted";
-//         header("Location: klantToevoegen.php");
-//     }
-// }
+    // if ($query_run) {
+    //     $_SESSION['status'] = "inserted succesfully";
+    //     header("Location: klantToevoegen.php");
+    // } else {
+    //     $_SESSION['status'] = "data not inserted";
+    //     header("Location: klantToevoegen.php");
+    // }
+}
 ?>
 <html lang="en">
 <head>
@@ -58,16 +60,16 @@
                 <td><input type="text" name="telefoon" placeholder="Voer telefoonnummer in:"></td>
             </tr>
             <tr>
-                <td><input type="text" name="adres" placeholder="Voer adres in:*"></td>
+                <td><input type="text" name="adres" placeholder="Voer adres in:*" required></td>
             </tr>
             <tr>
-                <td><input type="text" name="omschrijving" placeholder="Voer omschrijving in:"></td>
+                <td><input type="text" name="omschrijving" placeholder="Voer omschrijving in:*" required></td>
             </tr>
             <tr>
-                <td><input type="text" name="prijs" placeholder="Voer prijs in:"></td>
+                <td><input type="text" name="prijs" placeholder="Voer prijs in:*" required></td>
             </tr>
             <tr>
-                <td><input type="date" name="datum"></td>
+                <td><input type="date" name="datum" required></td>
             </tr>
             <tr>
                 <td><input type="submit" name="submit" value="submit"></td>

@@ -1,8 +1,11 @@
 <?php
 require_once('../src/db.php');
-$query = "SELECT *  FROM  klant";
+require_once('../src/users.php');
+// $query = "SELECT *  FROM  klant";
+$klant = new Klanten();
 $db = new DB();
-$result = $db->query($query);
+// $result = $db->query($query);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,11 +26,11 @@ $result = $db->query($query);
     <div class="container">
 
         <a href="index.php"> uitlog</a>
-        <a href="klantToevoegen.php">klant formulier </a>
+        <a href="klantToevoegen.php">klanten formulier </a>
 
         <div class="row">
             <div class="col">
-                <div class="card mt-5">
+                <div class="card mt-6">
                     <div class="card-header">
                         <h2 class="display-6 text-center">Overzicht van werk </h2>
                     </div>
@@ -46,20 +49,23 @@ $result = $db->query($query);
 
                             </tr>
                             <tr>
-                                <?php while ($row = mysqli_fetch_assoc($result)) {
-                                ?>
-                                <td><?php echo $row['id']; ?> </td>
-                                <td><?php echo $row['Naam']; ?> </td>
-                                <td><?php echo $row['Achternaam'] ?></td>
-                                <td><?php echo $row['Omschrijving']; ?> </td>
-                                <td><?php echo $row['Mail']; ?> </td>
-                                <td><?php echo $row['Telefoon']; ?></td>
-                                <td><?php echo $row['Adres']; ?></td>
-                                <td><?php echo $row['Datum']; ?></td>
-                                <td><?php echo $row['Prijs']; ?></td>
-                                <td><a href="klantToevoegen.php?edit=<?php echo $user['id'];  ?>"
+                                <?php $allKlanten = $klant->getAllKlanten();
+                                foreach ($allKlanten as $Klanten) { ?>
+
+                                <td><?php echo $Klanten['id']; ?> </td>
+                                <td><?php echo $Klanten['Naam']; ?> </td>
+                                <td><?php echo $Klanten['Achternaam'] ?></td>
+                                <td><?php echo $Klanten['Omschrijving']; ?> </td>
+                                <td><?php echo $Klanten['Mail']; ?> </td>
+                                <td><?php echo $Klanten['Telefoon']; ?></td>
+                                <td><?php echo $Klanten['Adres']; ?></td>
+                                <td><?php echo $Klanten['Datum']; ?></td>
+                                <td><?php echo $Klanten['Prijs']; ?></td>
+
+                                <td><a href="klantToevoegen.php?edit=<?php echo $klant['id']; ?>"
                                         class="edit_btn">edit</a></td>
-                                <td> <a href="server.php?del=<?php echo $user['id'];  ?>" class="del_btn"></a></td>
+                                <td><a href="server.php?del=<?php echo $klant['id'];  ?>" class="del_btn">Delete</a>
+                                </td>
                             </tr>
                             <?php } ?>
 

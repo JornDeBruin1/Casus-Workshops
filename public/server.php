@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once('../users.php');
-$users = new Users();
+$Klanten = new Klanten();
 
 // initialize variables
 $firstName = "";
@@ -12,35 +12,45 @@ $id = 0;
 $update = false;
 
 if (isset($_POST['save'])) {
-    $firstName = $_POST['firstName'];
-    $lastName = $_POST['lastName'];
+    $voornaam = $_POST['vnaam'];
+    $achternaam = $_POST['anaam'];
+    $tussenvoegsel = $_POST['tussenvoegsel'];
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $telefoon = $_POST['telefoon'];
+    $adres = $_POST['adres'];
+    $omschrijving = $_POST['omschrijving'];
+    $prijs = $_POST['prijs'];
+    $datum = $_POST['datum'];
 
-    $users->createUser($firstName, $lastName, $email, $password);
+    $Klanten->createKlant($voornaam, $achternaam, $tussenvoegsel, $email,  $telefoon, $adres, $omschrijving, $prijs, $datum);
 
-    $_SESSION['message'] = "User saved";
+    $_SESSION['message'] = "Klant saved";
     header('location: index.php');
 }
 
 if (isset($_POST['update'])) {
     $id = $_POST['id'];
-    $firstName = $_POST['firstName'];
-    $lastName = $_POST['lastName'];
+    $voornaam = $_POST['vnaam'];
+    $achternaam = $_POST['anaam'];
+    $tussenvoegsel = $_POST['tussenvoegsel'];
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $telefoon = $_POST['telefoon'];
+    $adres = $_POST['adres'];
+    $omschrijving = $_POST['omschrijving'];
+    $prijs = $_POST['prijs'];
+    $datum = $_POST['datum'];
 
-    $users->updateUser($id, $firstName, $lastName, $email, $password);
+    $Klanten->updateKlant($id, $voornaam, $achternaam, $tussenvoegsel, $email,  $telefoon, $adres, $omschrijving, $prijs, $datum);
 
-    $_SESSION['message'] = "User updated!";
+    $_SESSION['message'] = "Klant updated!";
     header('location: index.php');
 }
 
 if (isset($_GET['del'])) {
     $id = $_GET['del'];
 
-    $users->deleteUser($id);
+    $klanten->deleteKlant($id);
 
-    $_SESSION['message'] = "User deleted!";
+    $_SESSION['message'] = "klant deleted!";
     header('location: index.php');
 }

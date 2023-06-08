@@ -1,10 +1,10 @@
 <?php
 require_once('../src/db.php');
 require_once('../src/users.php');
-// $query = "SELECT *  FROM  klant";
+
 $klant = new Klanten();
 $db = new DB();
-// $result = $db->query($query);
+
 
 ?>
 <!DOCTYPE html>
@@ -62,18 +62,11 @@ $db = new DB();
                                 <td><?php echo $Klanten['Datum']; ?></td>
                                 <td><?php echo $Klanten['Prijs']; ?></td>
 
-                                <td><a href="klantToevoegen.php?edit=<?php echo $klant['id']; ?>"
-                                        class="edit_btn">edit</a></td>
-                                <td><a href="server.php?del=<?php echo $klant['id'];  ?>" class="del_btn">Delete</a>
-                                </td>
                             </tr>
                             <?php } ?>
 
-
-
-
-
                         </table>
+
                     </div>
                 </div>
             </div>

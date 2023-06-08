@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once('../users.php');
-$Klanten = new Klanten();
+require_once('../src/users.php');
+$klanten = new Klanten();
 
 // initialize variables
 $firstName = "";

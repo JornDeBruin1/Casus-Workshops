@@ -43,7 +43,7 @@ if (isset($_POST['update'])) {
     $Klanten->updateKlant($id, $voornaam, $achternaam, $tussenvoegsel, $email,  $telefoon, $adres, $omschrijving, $prijs, $datum);
 
     $_SESSION['message'] = "Klant updated!";
-    header('location: index.php');
+    header('location: klantToevoegen.php');
 }
 
 if (isset($_GET['del'])) {
@@ -52,5 +52,5 @@ if (isset($_GET['del'])) {
     $klanten->deleteKlant($id);
 
     $_SESSION['message'] = "klant deleted!";
-    header('location: index.php');
+    header('location: overzicht.php');
 }

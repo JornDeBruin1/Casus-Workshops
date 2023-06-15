@@ -37,10 +37,12 @@ if (isset($_POST['submit']))
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Klant Toevoeg Pagina</title>
+    <link rel="stylesheet" href="./CSS/toevoeg.css">
 </head>
 <body>
-    <a href="overzicht.php">overzicht</a>
-    <a href="index.php">uitlog</a>
+    <div class="container">
+    <a  class="boven_knop" href="overzicht.php">overzicht</a>
+    <a  class="boven_knop"href="index.php">uitlog</a>
     <table>
         <form action="" method="post">
             <tr>
@@ -75,5 +77,6 @@ if (isset($_POST['submit']))
             </tr>
         </form>
     </table>
+</div>
 </body>
 </html>

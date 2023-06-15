@@ -25,7 +25,7 @@ if (isset($_POST['save'])) {
     $Klanten->createKlant($voornaam, $achternaam, $tussenvoegsel, $email,  $telefoon, $adres, $omschrijving, $prijs, $datum);
 
     $_SESSION['message'] = "Klant saved";
-    header('location: index.php');
+    header('overzicht.php');
 }
 
 if (isset($_POST['update'])) {

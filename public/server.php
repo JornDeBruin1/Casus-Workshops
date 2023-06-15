@@ -4,10 +4,15 @@ require_once('../src/users.php');
 $klanten = new Klanten();
 
 // initialize variables
-$firstName = "";
-$lastName = "";
-$email = "";
-$password = "";
+$voornaam = '';
+$achternaam = '';
+$tussenvoegsel = '';
+$omschrijving = '';
+$email = '';
+$telefoon = '';
+$adres = '';
+$datum = '';
+$prijs = '';
 $id = 0;
 $update = false;
 
@@ -29,6 +34,8 @@ if (isset($_POST['save'])) {
 }
 
 if (isset($_POST['update'])) {
+    if (isset($_POST['id'])) {
+        $id = $_POST['id'];
     $id = $_POST['id'];
     $voornaam = $_POST['vnaam'];
     $achternaam = $_POST['anaam'];
@@ -40,10 +47,11 @@ if (isset($_POST['update'])) {
     $prijs = $_POST['prijs'];
     $datum = $_POST['datum'];
 
-    $Klanten->updateKlant($id, $voornaam, $achternaam, $tussenvoegsel, $email,  $telefoon, $adres, $omschrijving, $prijs, $datum);
+    $klanten->updateKlant($id, $voornaam, $achternaam, $tussenvoegsel, $email,  $telefoon, $adres, $omschrijving, $prijs, $datum);
 
     $_SESSION['message'] = "Klant updated!";
     header('location: klantToevoegen.php');
+    }
 }
 
 if (isset($_GET['del'])) {

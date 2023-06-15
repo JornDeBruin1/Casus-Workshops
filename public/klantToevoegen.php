@@ -1,9 +1,39 @@
 <!DOCTYPE html>
 <?php 
 require_once('../src/users.php');
+require_once('../public/server.php');
 $klanten = new Klanten();
-session_start();
+// session_start();
 
+$voornaam = '';
+$achternaam = '';
+$tussenvoegsel = '';
+$omschrijving = '';
+$email = '';
+$telefoon = '';
+$adres = '';
+$datum = '';
+$prijs = '';
+
+if (isset($_GET['edit'])) {
+    $id = $_GET['edit'];
+    $update = true;
+
+    $klant = $klanten->getKlantById($id);
+
+    if ($klant != null) {
+        $voornaam = $klant['Naam'];
+        $achternaam = $klant['Achternaam'];
+        $tussenvoegsel = $klant['Tussenvoegsel'];
+        $email = $klant['Mail'];
+        $telefoon = $klant['Telefoon'];
+        $adres = $klant['Adres'];
+        $omschrijving = $klant['Omschrijving'];
+        $prijs = $klant['Prijs'];
+        $datum = $klant['Datum'];
+
+    }
+}
 if (isset($_POST['submit']))
 {
     $voornaam = $_POST['vnaam'];
@@ -46,35 +76,54 @@ if (isset($_POST['submit']))
     <a  class="boven_knop"href="index.php">uitlog</a>
     <table>
         <form action="" method="post">
+        <input type="hidden" name="id" value="<?php echo $id; ?>">
+        <tr>
+                    <td><input type="text" name="vnaam" placeholder="Voer voornaam in:" required
+                            value="<?php echo $voornaam; ?>">
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="tussenvoegsel" placeholder="Voer tussenvoegsel in:"
+                            value="<?php echo $tussenvoegsel ?>"></td>
+                </tr>
+                <tr>
+                    <td><input type=" text" name="anaam" placeholder="Voer achternaam in:" required
+                            value="<?php echo $achternaam ?>"></td>
+                </tr>
+                <tr>
+                    <td><input type=" text" name="email" placeholder="Voer email in:" required
+                            value="<?php echo $email ?>"></td>
+                </tr>
+                <tr>
+                    <td><input type=" text" name="telefoon" placeholder="Voer telefoonnummer in:"
+                            value="<?php echo $telefoon ?>">
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="adres" placeholder="Voer adres in:" required
+                            value="<?php echo $adres ?>">
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type=" text" name="omschrijving" placeholder="Voer omschrijving in:" required
+                            value="<?php echo $omschrijving ?>"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="prijs" placeholder="Voer prijs in:" required
+                            value="<?php echo $prijs ?>">
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="date" name="datum" required value="<?php echo $datum ?>"></td>
+                </tr>
             <tr>
-                <td><input type="text" name="vnaam" placeholder="Voer voornaam in:*" required></td>
-            </tr>
-            <tr>
-                <td><input type="text" name="tussenvoegsel" placeholder="Voer tussenvoegsel in:"></td>
-            </tr>
-            <tr>
-                <td><input type="text" name="anaam" placeholder="Voer achternaam in:*" required></td>
-            </tr>
-            <tr>
-                <td><input type="text" name="email" placeholder="Voer email in:*" required></td>
-            </tr>
-            <tr>
-                <td><input type="text" name="telefoon" placeholder="Voer telefoonnummer in:"></td>
-            </tr>
-            <tr>
-                <td><input type="text" name="adres" placeholder="Voer adres in:*" required></td>
-            </tr>
-            <tr>
-                <td><input type="text" name="omschrijving" placeholder="Voer omschrijving in:*" required></td>
-            </tr>
-            <tr>
-                <td><input type="text" name="prijs" placeholder="Voer prijs in:*" required></td>
-            </tr>
-            <tr>
-                <td><input type="date" name="datum" required></td>
-            </tr>
-            <tr>
-                <td><input type="submit" name="submit" value="submit"></td>
+                <!-- <td><input type="submit" name="submit" value="submit"></td> -->
+                <?php if (isset($update) && $update) : ?>
+                    <button class=" btn" type="submit" name="update" style="background: #556B2F;">Update</button>
+                    <?php else : ?>
+                    <button class="btn" type="submit" name="submit">Opslaan</button>
+                    <?php header('location: overzicht.php'); ?>
+                    <?php endif ?>
             </tr>
         </form>
     </table>
